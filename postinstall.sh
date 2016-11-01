@@ -27,7 +27,7 @@ if [ -f ${ZAMMAD_DIR}/database.yml ]; then
     echo "database.yml exists. nothing to do."
 else
     # create new password
-    DB_PASS="$(tr -dc A-Za-z0-9 < /dev/urandom | head -c10)"
+    DB_PASS="$(apg -x10|head -1)"
 
     if [ -n "$(which postgresql-setup)" ]; then
 	echo "preparing postgresql server"
