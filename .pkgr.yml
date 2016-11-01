@@ -2,6 +2,7 @@ name: zammad-postgresql
 description: zammad-postgresql
 cli: false
 notifications: false
+default_dependencies: false
 targets:
   centos-6:
     dependencies:
