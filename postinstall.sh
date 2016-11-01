@@ -21,12 +21,6 @@ else
     INIT_CMD="sysvinit"
 fi
 
-echo "# (Re)creating init scripts"
-zammad scale web=1 websocket=1 worker=1
-
-echo "# Stopping Zammad"
-${INIT_CMD} stop zammad
-
 # check if database.yml exists
 if [ -f ${ZAMMAD_DIR}/database.yml ]; then
     # db migration
