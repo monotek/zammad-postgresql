@@ -1,0 +1,18 @@
+name: zammad-postgresql
+description: zammad-postgresql
+cli: false
+notifications: false
+targets:
+  centos-6:
+    dependencies:
+      - postgresql-server
+  centos-7:
+    dependencies:
+      - postgresql-server
+  debian-8:
+    dependencies:
+      - postgresql
+  ubuntu-16.04:
+    dependencies:
+      - postgresql
+after_install: postinstall.sh
