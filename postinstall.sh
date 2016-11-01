@@ -6,6 +6,7 @@
 PATH=/opt/zammad/bin:/opt/zammad/vendor/bundle/bin:/sbin:/bin:/usr/sbin:/usr/bin:
 
 ZAMMAD_DIR="/opt/zammad"
+ZAMMAD_POSTGRESQL_DIR="/opt/zammad-postgresql"
 DB="zammad_production"
 DB_USER="zammad"
 
@@ -57,6 +58,6 @@ else
     echo "GRANT ALL PRIVILEGES ON DATABASE \"${DB}\" TO \"${DB_USER}\";" | su - postgres -c psql
 
     # update configfile
-    sed "s/.*password:.*/  password: ${DB_PASS}/" < ${ZAMMAD_DIR}/database.psql > ${ZAMMAD_DIR}/database.yml
+    sed "s/.*password:.*/  password: ${DB_PASS}/" < ${ZAMMAD_POSTGRESQL_DIR}/database.psql > ${ZAMMAD_POSTGRESQL_DIR}/database.yml
 fi
 
