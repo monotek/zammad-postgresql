@@ -3,7 +3,7 @@ description: zammad-postgresql
 cli: false
 notifications: false
 default_dependencies: false
-buildpack: https://github.com/monotek/zammad-buildpack.git#master
+buildpack: https://github.com/monotek/heroku-dummy-buildpack.git#master
 targets:
   centos-6:
     dependencies:
